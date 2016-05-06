@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @interface ViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIButton *signIn;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 
 @end

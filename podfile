@@ -1,0 +1,4 @@
+# platform :ios
+target ’TCS’ do
+	pod 'ReactiveCocoa', ‘2.0'
+end
