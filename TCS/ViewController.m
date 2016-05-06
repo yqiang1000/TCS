@@ -21,7 +21,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
     self.title = @"Reactive Sign In";
-    [self combiningLatest];
+    [self signInSignal_2];
 }
 
 //01 监听textField输入变化
@@ -206,8 +206,9 @@
     [[[self.signIn rac_signalForControlEvents:UIControlEventTouchUpInside]
       flattenMap:^RACStream *(id value) {
           return [self signInSignal_3];
-      }] subscribeNext:^(id x) {
-          NSLog(@"Sign is result : %@",x);
+      }] subscribeNext:^(NSNumber *value) {
+          BOOL success = [value boolValue];
+          self.timeLabel.text = success?@"success !":@"failed !";
       }];
 }
 
